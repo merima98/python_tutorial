@@ -74,7 +74,7 @@
 # print(f'Hi {first_name.title()}!')
 
 
-# 4) 
+# # 4) 
 # print('Basic Arithmetic')
 
 # a = 10
@@ -158,3 +158,43 @@
 
 # if percentage_of_race_in_pits > 5:
 #     print('You need a new pit crew!')
+
+
+# # 8) Lists
+# friends = ['Alice', 'Bob', 'Charlie', 'David']
+
+# print('List: ', friends)
+
+# # List - Exercise:
+
+# #  - You sell lemonade over two weeks, the lists show number of lemonades sold per week
+# #  - Profit for each lemonade sold is 1.5$
+
+# #  - Add another day to week 2 list by capturing a number as input
+# #  - Combine two lists into the list called 'sales'
+# #  - Calculate/print how much you have earned on:
+# #  - Best day
+# #  - Worst day
+# #  - Separately and in total 
+# #  Hint: 3 prints in total
+
+# sales_w1 = [7, 3, 42, 19, 15, 35, 9]
+# sales_w2 = [12, 4, 26, 10, 7, 28]
+
+# sales = []
+
+# sales_w2.append(int(input('Enter lemonade for the new day in week 2: ')))
+
+# sales = sales_w1 + sales_w2
+
+# best_day = max(sales)
+# best_day_profit = best_day * 1.5
+# print(f'Best day: {best_day} lemonades, Earnings: ${best_day_profit:.2f}')
+
+# worst_day = min(sales)
+# worst_day_profit = worst_day * 1.5
+# print(f'Worst day: {worst_day} lemonades, Earnings: ${worst_day_profit:.2f}')
+
+
+# combined_profit = best_day_profit + worst_day_profit
+# print(f'Combined profit is: {combined_profit}')
