@@ -1,16 +1,10 @@
-print("Hello, World!")
 
+failed_subjects='2'
+name='John'
 
-users=[
-    {"id":1, "name":"John"},
-    {"id":2, "name":"Jane"},
-    {"id":3, "name":"Doe"}
-]
-results=[]
+print('Dear Mrs Badger')
+print ('Your son '+ name +  ' is failing '+ failed_subjects +  ' subjects')
+print( name +  ' will need to redo '+ failed_subjects +  ' courses')
 
-def get_name_users(users):
-    for user in users:
-        results.append(user["name"])
-    return results
-
-print(get_name_users(users))
+name='Eric'
+print( name +  ' is doing well in geography')
