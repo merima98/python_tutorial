@@ -198,3 +198,66 @@
 
 # combined_profit = best_day_profit + worst_day_profit
 # print(f'Combined profit is: {combined_profit}')
+
+
+# # 9.)
+
+# csv = 'Eric, John, Michael, Terry, Graham:TerryG;Brian'
+
+# friends_list = ['Exercise: fill me with names']
+
+# print('Friends List:', friends_list)
+
+# # From the list above fill a list (frined_list) properly
+# # with the names of all the frineds. Ine per "slot"
+# # you may need to tun same comand several times
+# # use print() statements to work your way through the exercise
+
+# csv = csv.replace(';', ', ')
+# csv = csv.replace(':', ', ')
+
+
+# friends_list = []
+# print('Names, ', csv)
+# friends_list = csv.split(',')
+# print('Friends List:', friends_list)
+
+
+# 10)
+# Sets
+
+# 1. Check if Eric and John exist in frineds
+# 2. Combine or add the  two sets
+# 3. Find names that are in both sets
+# 4. Find names that are only in frineds
+# 5. Show only the names who only appear in one of the lists
+# 6. Create a new cars-list withouth duplicates
+
+friends ={'John', 'Michael', 'Terry', 'Graham', 'Eric'}
+my_frineds = {'Reg', 'Loretta', 'Colin', 'John', 'Graham'}
+cars = ['900', '420', 'V70', '911', '996', 'V90', '911', '911', 'S', '328', '900']
+
+
+# 1. Check if Eric and John exist in frineds
+print('Check if Eric and John are in friends: ', 'Eric' in friends and 'John' in friends)
+
+# 2. Combine or add the two sets
+all_friends = friends.union(my_frineds)
+print('All Friends:', all_friends)
+
+# 3. Find names that are in both sets
+common_friends = friends.intersection(my_frineds)
+print('Common friends: ', common_friends)
+
+# 4. Find names that are only in frineds
+names_only_in_frineds = friends.difference(my_frineds)
+print('Names only in friends set: ', names_only_in_frineds)
+
+# 5. Show only the names who only appear in one of the lists
+unique_friends = friends.symmetric_difference(my_frineds)
+print('Names only in one of the sets: ', unique_friends)
+
+
+# 6. Create a new cars-list withouth duplicates
+cars_set = list(set(cars))
+print('Cars list without duplicates: ', cars_set)
