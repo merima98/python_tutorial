@@ -223,41 +223,65 @@
 # print('Friends List:', friends_list)
 
 
-# 10)
-# Sets
+# # 10)
+# # Sets
 
-# 1. Check if Eric and John exist in frineds
-# 2. Combine or add the  two sets
-# 3. Find names that are in both sets
-# 4. Find names that are only in frineds
-# 5. Show only the names who only appear in one of the lists
-# 6. Create a new cars-list withouth duplicates
+# # 1. Check if Eric and John exist in frineds
+# # 2. Combine or add the  two sets
+# # 3. Find names that are in both sets
+# # 4. Find names that are only in frineds
+# # 5. Show only the names who only appear in one of the lists
+# # 6. Create a new cars-list withouth duplicates
 
-friends ={'John', 'Michael', 'Terry', 'Graham', 'Eric'}
-my_frineds = {'Reg', 'Loretta', 'Colin', 'John', 'Graham'}
-cars = ['900', '420', 'V70', '911', '996', 'V90', '911', '911', 'S', '328', '900']
-
-
-# 1. Check if Eric and John exist in frineds
-print('Check if Eric and John are in friends: ', 'Eric' in friends and 'John' in friends)
-
-# 2. Combine or add the two sets
-all_friends = friends.union(my_frineds)
-print('All Friends:', all_friends)
-
-# 3. Find names that are in both sets
-common_friends = friends.intersection(my_frineds)
-print('Common friends: ', common_friends)
-
-# 4. Find names that are only in frineds
-names_only_in_frineds = friends.difference(my_frineds)
-print('Names only in friends set: ', names_only_in_frineds)
-
-# 5. Show only the names who only appear in one of the lists
-unique_friends = friends.symmetric_difference(my_frineds)
-print('Names only in one of the sets: ', unique_friends)
+# friends ={'John', 'Michael', 'Terry', 'Graham', 'Eric'}
+# my_frineds = {'Reg', 'Loretta', 'Colin', 'John', 'Graham'}
+# cars = ['900', '420', 'V70', '911', '996', 'V90', '911', '911', 'S', '328', '900']
 
 
-# 6. Create a new cars-list withouth duplicates
-cars_set = list(set(cars))
-print('Cars list without duplicates: ', cars_set)
+# # 1. Check if Eric and John exist in frineds
+# print('Check if Eric and John are in friends: ', 'Eric' in friends and 'John' in friends)
+
+# # 2. Combine or add the two sets
+# all_friends = friends.union(my_frineds)
+# print('All Friends:', all_friends)
+
+# # 3. Find names that are in both sets
+# common_friends = friends.intersection(my_frineds)
+# print('Common friends: ', common_friends)
+
+# # 4. Find names that are only in frineds
+# names_only_in_frineds = friends.difference(my_frineds)
+# print('Names only in friends set: ', names_only_in_frineds)
+
+# # 5. Show only the names who only appear in one of the lists
+# unique_friends = friends.symmetric_difference(my_frineds)
+# print('Names only in one of the sets: ', unique_friends)
+
+
+# # 6. Create a new cars-list withouth duplicates
+# cars_set = list(set(cars))
+# print('Cars list without duplicates: ', cars_set)
+
+
+# Functions
+print('Functions')
+
+#Add new print statement - on new line 
+# which says 'We hear you like the color xxx! xxx is a string with a color
+#2. Extend the function with another input parameter 'color', the defaults to 'red'
+#3. Capture the color via an input box as variable: color
+#4. Change the' You are xx!' text to say 'you will be xx+1 years old next birthday!'
+#5. Capitalize first letter of 'name', and rest are small caps
+#6. Favorite color should be lowercase
+
+def greeting(name, age=28, color='red'):
+    print(f'Hello, {name.capitalize()}!')
+    print(f'You will be {age + 1} years old next birthday!')
+    print(f'We hear you like the color {color.lower()}!')
+
+user_name = input('Enter your name: ')
+user_age = int(input('Enter your age: '))   
+user_color = input('Enter your favorite color: ')
+
+greeting(user_name, user_age, user_color)
+
