@@ -263,25 +263,73 @@
 # print('Cars list without duplicates: ', cars_set)
 
 
-# Functions
-print('Functions')
+# # Functions
+# print('Functions')
 
-#Add new print statement - on new line 
-# which says 'We hear you like the color xxx! xxx is a string with a color
-#2. Extend the function with another input parameter 'color', the defaults to 'red'
-#3. Capture the color via an input box as variable: color
-#4. Change the' You are xx!' text to say 'you will be xx+1 years old next birthday!'
-#5. Capitalize first letter of 'name', and rest are small caps
-#6. Favorite color should be lowercase
+# #Add new print statement - on new line 
+# # which says 'We hear you like the color xxx! xxx is a string with a color
+# #2. Extend the function with another input parameter 'color', the defaults to 'red'
+# #3. Capture the color via an input box as variable: color
+# #4. Change the' You are xx!' text to say 'you will be xx+1 years old next birthday!'
+# #5. Capitalize first letter of 'name', and rest are small caps
+# #6. Favorite color should be lowercase
 
-def greeting(name, age=28, color='red'):
-    print(f'Hello, {name.capitalize()}!')
-    print(f'You will be {age + 1} years old next birthday!')
-    print(f'We hear you like the color {color.lower()}!')
+# def greeting(name, age=28, color='red'):
+#     print(f'Hello, {name.capitalize()}!')
+#     print(f'You will be {age + 1} years old next birthday!')
+#     print(f'We hear you like the color {color.lower()}!')
 
-user_name = input('Enter your name: ')
-user_age = int(input('Enter your age: '))   
-user_color = input('Enter your favorite color: ')
+# user_name = input('Enter your name: ')
+# user_age = int(input('Enter your age: '))   
+# user_color = input('Enter your favorite color: ')
 
-greeting(user_name, user_age, user_color)
+# greeting(name= user_name, age=user_age, color=user_color)
+
+
+# 11.) Return statements
+
+# def value_added_tax(amount):
+#     tax = amount * 0.25
+#     total_amount = amount * 1.25
+#     return f"{amount}, {tax}, {total_amount}"
+# price = value_added_tax(100)
+# print(price, type(price))
+
+
+#12.) if elif else - Exercise
+
+# Create a calculator which handles +, -, *, / and outputs answer based on the mode/ operator used
+
+#Hint: use 3 separate inputs
+#Bonus: Extend functionality with extra mode so it alseo does celsius to fahrenheit conversion 
+#Formula is: temp in C * 9/5 + 32 = temp in F
+
+def calculator(num1, operator, num2 = 0):
+    if operator == '+':
+        return num1 + num2
+    elif operator == '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        if num2 != 0:
+            return num1 / num2
+        else:
+            return "Error: Division by zero"
+    elif operator.lower() == 'c to f':
+        return (num1 * 9/5) + 32
+    else:
+        return "Error: Invalid operator"
+
+operation = input('Enter operator (+, -, *, /) or "C to F" for temperature conversion: ')
+first_number = float(input('Enter first number: '))
+
+if operation.lower() == 'c to f':
+    result = calculator(first_number, operation)
+    print('Result:', result)
+else:
+    second_number = float(input('Enter second number: '))
+    result = calculator(first_number, operation, second_number )
+    print('Result:', result)
+
 
