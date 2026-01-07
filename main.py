@@ -372,9 +372,151 @@
 
 
 
+##14.)
+# #Coffer order queue challenge
+
+# #1. Set up two variables: one for total price, one for drink count
+# #2. Start a while True loop
+# #3. Ask for customer's name
+# #4. If the name is "done", break the loop
+# #5. Ask for their drink order
+# #6. If it si "latte", add 3.50 to the total and +1 to drink count
+# #   If it is "americano", add 3.00 to total and +1 to drink count
+# #   If it is "espresso", add 2.50 to the total and +1 to drink count
+# #7. If it is not one of those drinks, print a warning and continue
+# #8. After the loop, print total number of drinks and total price
 
 
 
+# total_price = 0
+# drink_count = 0
+
+# drink_name = input('Dear customer, what do you want to order? Latte, americano or espresso? ')
+
+# while(True):
+#     if(drink_name.lower() == 'latte'):
+#         total_price = total_price + 3.50
+#         drink_count = drink_count + 1
+#     elif(drink_name.lower() == 'americano'):
+#         total_price = total_price + 3.00
+#         drink_count = drink_count + 1
+#     elif(drink_name.lower() == 'espresso'):
+#          total_price = total_price + 2.50
+#          drink_count = drink_count + 1    
+#     elif(drink_name.lower() != 'done'):
+#         print('Error! We do not have that product! Please order again. Thanks!')   
+#     else:
+#         break
+#     drink_name = input('Dear customer, what do you want to order? Latte, americano or espresso? If you want to quit, please type "DONE"')
+
+# print(f"Total price ${total_price:2f} and total number of orders are: {drink_count}")
 
 
+# #15.)
+# print("For loops - Exercise")
 
+# # - You are having a party and want to invite your frineds. 
+# # - you want the print out invitations for each frined using for loop
+# # - The names are in two lists , 'names' and 'names1'
+# # - You also need to add two extra names to the list using an 'input' box, when you run the code
+# # - Printout one invitation to each frined per line 
+# # - Names should be properly capitalized
+
+# #Example of printout
+# # John Cleese! You are invited to the party on saturday. 
+# # Eric Idle! YOu are invited to the party on saturday.staticmethod
+
+# # - Hint: you may need two (for) loops to solve this exercise
+
+# names = ['John Doe', 'Tom Tom', 'Alex Alex', 'Julie Doe']
+# names1 = ['Marry Doe', 'Anna Doe', 'Monica Doe', 'Tom Doe']
+# mesage = 'You are invited to the party on saturday.'
+
+# names.extend(names1)
+
+# for index in range(2):
+#     names.append(input('Please type First and Last name for your invitation for first group!'))
+ 
+
+# for name in names: 
+#     print(f"{name.title()}, {mesage}")
+    
+
+# #16.)
+# #Phone number formatter
+
+# #1. Ask the user to enter a U.S phone number in ***any format***.
+# #2. Use .strip() to remove any leading/trailing spaces.
+# #3. Replace common separators (-, (, ), .) with spaces/
+# #4. Use .split() to break into chunks, then .join() to merge the digits.
+# #5. Check if the cleaned number has ***exactly 10 digits***
+# #6. If yes, format it like this: (123) 456-7890
+# #7. If not, print an error message: "Please enter exactly 10 digits"
+
+# #123-456-7890
+# #(123)456.7890
+
+# number = input('Please enter yout U.S phone number: ')
+# cleaned = number.strip() 
+
+# for ch in ['-', '(', ')', '.']:
+#     cleaned = cleaned.replace(ch, " ")
+
+# parts = cleaned.split()
+# digits_only = ''.join(parts)
+
+
+# if len(digits_only) == 10:
+#     area = digits_only[0:3]
+#     mid = digits_only[3:6]
+#     end = digits_only[6:]
+#     formatted_phone_number = f"({area}) {mid}-{end}"
+#     print("New format of number is: ", formatted_phone_number)
+# else:
+#     print('Please enter exactly 10 digits')
+
+
+#17.)
+
+#Access control scsnner challenge
+
+#1. Create a set of revoked badge numbers.
+# 2. Create two empty lists: "approved" and "denied".
+# 3. Start a loop to collect visitor info:
+#     - Ask for the visitor's name (or type "done" to finish).
+#     - If the name is "done", exit the loop.
+#     - Otherwise, ask for their badge number.
+#     - Check if the badge is revoked:
+#        * If revoked: add the name to "denied" and display "ACCESS DENIED".
+#        * If not: add the name to "approved" and display "ACCESS GRANTED".
+# 4. Print the final "Access Summary" for "Approved visitors" & "Denied visitors":
+#   - Sort both lists alphabetically.
+#   - Display the total number of approved and denied visitors.
+
+revoked_badge_numbers= {'X123', 'B789', 'Z999'}
+approved_list = []
+denied_list = [] 
+
+while True:
+    visitor_name = input("Please insert your name: ")
+
+    if visitor_name.lower() == 'done':
+        break
+    visitor_badge_number = input('Please insert your badge numbers: ').strip().upper()
+    if visitor_badge_number in revoked_badge_numbers:
+        print(f"[ACCESS DENIED] {visitor_name} - Revoked badge")
+        denied_list.append(visitor_name.title())
+    else:
+        print(f"[ACCESS APPROVED] {visitor_name} - Revoked badge")
+        approved_list.append(visitor_name.title())
+
+
+print('APPROVED VISITORS')
+for person in sorted(approved_list):
+    print(f'- {person}')
+
+print('DENIED VISITORS')
+for person in sorted(denied_list):
+    print(f'- {person}')
+ 
+print(f"Total number of denied visitors: {len(approved_list)} and total number of approved visitors: {len(denied_list)}")
