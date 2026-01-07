@@ -296,40 +296,85 @@
 # print(price, type(price))
 
 
-#12.) if elif else - Exercise
+# #12.) if elif else - Exercise
 
-# Create a calculator which handles +, -, *, / and outputs answer based on the mode/ operator used
+# # Create a calculator which handles +, -, *, / and outputs answer based on the mode/ operator used
 
-#Hint: use 3 separate inputs
-#Bonus: Extend functionality with extra mode so it alseo does celsius to fahrenheit conversion 
-#Formula is: temp in C * 9/5 + 32 = temp in F
+# #Hint: use 3 separate inputs
+# #Bonus: Extend functionality with extra mode so it alseo does celsius to fahrenheit conversion 
+# #Formula is: temp in C * 9/5 + 32 = temp in F
 
-def calculator(num1, operator, num2 = 0):
-    if operator == '+':
-        return num1 + num2
-    elif operator == '-':
-        return num1 - num2
-    elif operator == '*':
-        return num1 * num2
-    elif operator == '/':
-        if num2 != 0:
-            return num1 / num2
-        else:
-            return "Error: Division by zero"
-    elif operator.lower() == 'c to f':
-        return (num1 * 9/5) + 32
-    else:
-        return "Error: Invalid operator"
+# def calculator(num1, operator, num2 = 0):
+#     if operator == '+':
+#         return num1 + num2
+#     elif operator == '-':
+#         return num1 - num2
+#     elif operator == '*':
+#         return num1 * num2
+#     elif operator == '/':
+#         if num2 != 0:
+#             return num1 / num2
+#         else:
+#             return "Error: Division by zero"
+#     elif operator.lower() == 'c to f':
+#         return (num1 * 9/5) + 32
+#     else:
+#         return "Error: Invalid operator"
 
-operation = input('Enter operator (+, -, *, /) or "C to F" for temperature conversion: ')
-first_number = float(input('Enter first number: '))
+# operation = input('Enter operator (+, -, *, /) or "C to F" for temperature conversion: ')
+# first_number = float(input('Enter first number: '))
 
-if operation.lower() == 'c to f':
-    result = calculator(first_number, operation)
-    print('Result:', result)
-else:
-    second_number = float(input('Enter second number: '))
-    result = calculator(first_number, operation, second_number )
-    print('Result:', result)
+# if operation.lower() == 'c to f':
+#     result = calculator(first_number, operation)
+#     print('Result:', result)
+# else:
+#     second_number = float(input('Enter second number: '))
+#     result = calculator(first_number, operation, second_number )
+#     print('Result:', result)
+
+
+# def num_days(month):
+#     days = 30
+
+#     if month in {'jan','mar','may','jul','aug','oct','dec'}:
+#         days = 31
+#     elif month == 'feb':
+#         days = 28
+#     print(f'number of days in ${month} is {days}')
+
+
+# #Testiong the function
+# num_days('jun')
+
+# #optimize/shorten the code in the function
+# #try to reduce the number of conditions
+
+
+##13.)
+# print('Gessing game') 
+
+# #Gues the correct number in 3 guesses. If you don't get it right after 3 guesses you lose the game.
+# #Give user input box: 1. To capture guesses, 
+# #print(and input boxex) 1. If user wins 2. If user loses
+# #Tip: (remember you won't see print statements during execution, so If you want to see prints during 
+# # while loop, then print to the input box)
+
+# number_of_guesses = 3
+# correct_number = 32
+# while number_of_guesses > 0:
+#     input_guess = input('Enter your guess:')
+#     if(int(input_guess) == correct_number):
+#         print('Great! That is correct number!')
+#         break
+#     number_of_guesses = number_of_guesses -1
+#     if number_of_guesses == 0:
+#         print('Sorry, try next time!')
+
+
+
+
+
+
+
 
 
