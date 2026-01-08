@@ -476,47 +476,207 @@
 #     print('Please enter exactly 10 digits')
 
 
-#17.)
+# #17.)
 
-#Access control scsnner challenge
+# #Access control scsnner challenge
 
-#1. Create a set of revoked badge numbers.
-# 2. Create two empty lists: "approved" and "denied".
-# 3. Start a loop to collect visitor info:
-#     - Ask for the visitor's name (or type "done" to finish).
-#     - If the name is "done", exit the loop.
-#     - Otherwise, ask for their badge number.
-#     - Check if the badge is revoked:
-#        * If revoked: add the name to "denied" and display "ACCESS DENIED".
-#        * If not: add the name to "approved" and display "ACCESS GRANTED".
-# 4. Print the final "Access Summary" for "Approved visitors" & "Denied visitors":
-#   - Sort both lists alphabetically.
-#   - Display the total number of approved and denied visitors.
+# #1. Create a set of revoked badge numbers.
+# # 2. Create two empty lists: "approved" and "denied".
+# # 3. Start a loop to collect visitor info:
+# #     - Ask for the visitor's name (or type "done" to finish).
+# #     - If the name is "done", exit the loop.
+# #     - Otherwise, ask for their badge number.
+# #     - Check if the badge is revoked:
+# #        * If revoked: add the name to "denied" and display "ACCESS DENIED".
+# #        * If not: add the name to "approved" and display "ACCESS GRANTED".
+# # 4. Print the final "Access Summary" for "Approved visitors" & "Denied visitors":
+# #   - Sort both lists alphabetically.
+# #   - Display the total number of approved and denied visitors.
 
-revoked_badge_numbers= {'X123', 'B789', 'Z999'}
-approved_list = []
-denied_list = [] 
+# revoked_badge_numbers= {'X123', 'B789', 'Z999'}
+# approved_list = []
+# denied_list = [] 
 
-while True:
-    visitor_name = input("Please insert your name: ")
+# while True:
+#     visitor_name = input("Please insert your name: ")
 
-    if visitor_name.lower() == 'done':
-        break
-    visitor_badge_number = input('Please insert your badge numbers: ').strip().upper()
-    if visitor_badge_number in revoked_badge_numbers:
-        print(f"[ACCESS DENIED] {visitor_name} - Revoked badge")
-        denied_list.append(visitor_name.title())
-    else:
-        print(f"[ACCESS APPROVED] {visitor_name} - Revoked badge")
-        approved_list.append(visitor_name.title())
+#     if visitor_name.lower() == 'done':
+#         break
+#     visitor_badge_number = input('Please insert your badge numbers: ').strip().upper()
+#     if visitor_badge_number in revoked_badge_numbers:
+#         print(f"[ACCESS DENIED] {visitor_name} - Revoked badge")
+#         denied_list.append(visitor_name.title())
+#     else:
+#         print(f"[ACCESS APPROVED] {visitor_name} - Revoked badge")
+#         approved_list.append(visitor_name.title())
 
 
-print('APPROVED VISITORS')
-for person in sorted(approved_list):
-    print(f'- {person}')
+# print('APPROVED VISITORS')
+# for person in sorted(approved_list):
+#     print(f'- {person}')
 
-print('DENIED VISITORS')
-for person in sorted(denied_list):
-    print(f'- {person}')
+# print('DENIED VISITORS')
+# for person in sorted(denied_list):
+#     print(f'- {person}')
  
-print(f"Total number of denied visitors: {len(approved_list)} and total number of approved visitors: {len(denied_list)}")
+# print(f"Total number of denied visitors: {len(approved_list)} and total number of approved visitors: {len(denied_list)}")
+
+# #18.)
+
+# #Loyality points engine challenge
+
+# #RULES:
+
+# #Each whole dollar spent earns 3 points
+# #Tiers:
+# #   < 100 pts -> Bronze
+# #   100 - 499 pts -> Silver
+# #   >= 500 pts -> Gold
+
+# #Steps
+# #1. Define earn_points(price) -> returns points for one purchase
+# #2. Define tier_label(points) -> returns Bronze / Silver / Gold
+# #3. Given the hard-coded list 'purchases',
+# #   loop through it, call earn_points() for each amount, 
+# #   and add the result to total_points.
+# #4. After the loop, call tier_label(total_points)
+# #5. Print 'Loyality Summary'
+# # - Total dollars spent
+# # - Total points earned
+# # - Final tier
+
+# #Purchase history (3.75, 7.20)
+
+# purchases = [12.50]
+
+# #Returns points for one purchase (whole dolar - int is used)
+# def earn_points(price):
+#     return int(price) * 3
+
+# def tier_label(points):
+#     if points < 100:
+#         return 'Bronze'
+#     elif points >= 100 and points < 500:
+#         return 'Silver'
+#     else:
+#         return 'Gold'
+    
+# total_points = 0
+
+# #Call earn points for each amount
+# for purchase in purchases:
+#     points = earn_points(purchase)
+#     total_points += points
+
+# tier_label_for_purchases = tier_label(total_points)
+
+# print("****LOYALITY SUMMARY****")
+# print(f"- Total dollars spent: {sum(purchases)}")
+# print(f"Total points earned: {total_points}")
+# print(f"- Final tier: {tier_label_for_purchases}")
+
+
+# #19.)
+
+# #Dog Bus tracker - Challenge Steps
+
+# #1. Start with a bus dictionary holding current passengers.
+# #   - Each seat number (1, 2, 3, ...) us a key
+# #   - Each value is another dioctionary with each pet's:
+# #       * name
+# #       * breed
+# #       * pickup time
+# #       * dropoff time
+
+# current_passengers = {
+#     1: {
+#     "name" : "Tom", 
+#     "breed": "Labrador", 
+#     "pickup_time": "8.1.2026",
+#     "dropoff_time":"11.1.2026 at 8PM" 
+#     },
+#     2: {
+#     "name" : "Tom", 
+#     "breed": "Labrador", 
+#     "pickup_time": "8.1.2026",
+#     "dropoff_time":"15.1.2026 at 8PM" 
+#     },
+#     3: {
+#     "name" : "Merry", 
+#     "breed": "Labrador", 
+#     "pickup_time": "8.1.2026",
+#     "dropoff_time":"11.1.2026 at 8PM" 
+#     },
+# }
+
+
+
+# #2. Print a starting roster showing each pet's seat, name, and pickup time.
+
+# for key, value in current_passengers.items():
+#     print(f"Seat number No{key}. Name is {value['name']}. Pickup time is {value['pickup_time']}.")
+
+# MAX_SEATS = 8
+
+# #3. Add one new pet if there is  room on the bus.
+# #   - Use MAX_SEATS to limit capcaity.
+# #   - Dynamically assign the next seat number
+# #   - Print the updated roster showing all pets after pickup.
+# current_number_of_passengers= len(current_passengers)
+
+# while current_number_of_passengers <= MAX_SEATS:
+#     print('Do you want to add more passengers?')
+#     name = input('If Yes, type name. If No, type DONE. ')
+
+#     if name.lower() =='done':
+#         break
+#     breed = input('Enter breed: ')
+#     pickup_time = input('Enter pickup time: ')
+#     dropoff_time = input('Enter dropoff time: ')
+
+#     current_number_of_passengers+=1
+#     current_passengers[current_number_of_passengers] = {
+#         "name": name.title(), 
+#         "breed": breed, 
+#         "pickup_time": pickup_time,
+#         "dropoff_time":dropoff_time 
+#     }
+
+# print(f"***ALL PETS AFTER PICKUP***")
+# for key, value in current_passengers.items():
+#     print(f"Seat number No{key}. Name is {value['name']}. Pickup time is {value['pickup_time']}.")
+
+
+
+# #4. Ask which pet leaves early.
+# #   - Remove that pet from the bus.
+# #   - Print a message saying thet've headed home.
+
+# print('PLEASE ADVICE IF ANY OF PET LEAVES EARLY')
+# name_of_pet = input('If so, please enter name of pet. If no enter DONE: ')
+# index = None
+
+# while True:
+
+#     if name_of_pet.lower() == 'done':
+#         break
+
+#     for key, value in current_passengers.items():
+#         if value['name'].lower() == name_of_pet.lower():
+#             index = key
+#             print('Pet was headed home! Thanks for the ride.')
+#             break
+
+#     if index != None:
+#         del current_passengers[index]
+#     else:
+#         print('There is no pet in the bus with that name!')
+
+#     name_of_pet = input('If so, please enter name of pet. If no enter DONE: ')
+
+
+# #5. Print a final roseter listing the remaining pets and their dropoff times.
+
+# print(f"***FINAL ROSETER OF REMAINING PETS AND THEIR DROPOFF TIMES***")
+# for key, value in current_passengers.items():
+#     print(f"Seat number No{key}. Name is {value['name']}. Dropoff time is {value['dropoff_time']}.")
