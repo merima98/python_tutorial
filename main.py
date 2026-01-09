@@ -728,57 +728,101 @@
 # my_pizza.describe_pizza()
     
 
-#LAMBDA FUNCTIONS:
+# #LAMBDA FUNCTIONS:
 
-f = lambda x: x + 5
+# f = lambda x: x + 5
 
-print(f(2))
+# print(f(2))
 
-strip_spaces = lambda str: ''.join(str.split(' '))
+# strip_spaces = lambda str: ''.join(str.split(' '))
 
-print(strip_spaces('Monty Pythons Flying Circus'))
+# print(strip_spaces('Monty Pythons Flying Circus'))
 
-join_list_no_duplicates = lambda list_a, list_b: list(set(list_a + list_b))
+# join_list_no_duplicates = lambda list_a, list_b: list(set(list_a + list_b))
 
-list_a = [1, 2, 3, 4]
-list_b = [3, 4, 5, 6, 7]
+# list_a = [1, 2, 3, 4]
+# list_b = [3, 4, 5, 6, 7]
 
-print(join_list_no_duplicates(list_a, list_b))
+# print(join_list_no_duplicates(list_a, list_b))
 
-def create_quad_func(a, b, c):
-    # Return function f(x) = ax^2 + bx + c
-    return lambda x: a*x**2 + b*x + c
+# def create_quad_func(a, b, c):
+#     # Return function f(x) = ax^2 + bx + c
+#     return lambda x: a*x**2 + b*x + c
 
-f = create_quad_func(2, 4, 6)
+# f = create_quad_func(2, 4, 6)
 
-g = create_quad_func(1, 2, 3)
+# g = create_quad_func(1, 2, 3)
 
-print(f(2))
-print(g(2))
+# print(f(2))
+# print(g(2))
 
-signups = ['MPF104', 'MPF20', 'MPF2', 'MPF17', 'MPF3', 'MPF45']
+# signups = ['MPF104', 'MPF20', 'MPF2', 'MPF17', 'MPF3', 'MPF45']
 
-print(sorted(signups))
+# print(sorted(signups))
 
-print(sorted(signups, key= lambda id: int(id[3:])))
-
-
-class Player:
-
-    def __init__(self, name, score):
-        self.name = name
-        self.score = score
-
-Eric = Player('Eric', 1232)
-John = Player('John', 39032)
-Terry = Player('Terry', 4930)
-
-player_list = [Eric, John, Terry]
+# print(sorted(signups, key= lambda id: int(id[3:])))
 
 
-player_list.sort(key= lambda player: player.score, reverse=True)
-print([player.name for player in player_list])
+# class Player:
+
+#     def __init__(self, name, score):
+#         self.name = name
+#         self.score = score
+
+# Eric = Player('Eric', 1232)
+# John = Player('John', 39032)
+# Terry = Player('Terry', 4930)
+
+# player_list = [Eric, John, Terry]
+
+
+# player_list.sort(key= lambda player: player.score, reverse=True)
+# print([player.name for player in player_list])
+
+# import random
+
+# print(random.random())
+
+#Raffle Prze Picker - Challenge Steps
+
+#1. Ask how many people are entering the raffle (at least 3 names).
+#2. Use a loop to collect their names into a list.
+#3. Ask for exactly 3 prize names (in order) and store them in a list.
+#4. Randomly pick 3 different winners from the participant list.
+#5. Print out who wins prize and make sure the final one 
+# is clearly marked as the Grand Prize.
+
+#Hint: Use loops, lists, and a tool that picks random items without repeats. 
+
+people_number = int(input('Please enter how many people are entering the raffle? '))
+
+if people_number < 3:
+    print("You need at least 3 participants to run the raffle!")
+    exit()
+
+names = []
+
+for i in range(people_number):
+    name = input(f'Please enter #{i+1} name: ')
+    names.append(name)
+
+
+prizes = []
+
+for i in range(3):
+    prize = input(f'Prize #{i+1}: ')
+    prizes.append(prize)
 
 import random
 
-print(random.random())
+
+winners = random.sample(names, 3)
+
+print("Raffle results")
+for i in range(3):
+    if i  == 2:
+        print(f"Grand prize: {winners[i].title()} wins the {prizes[i].title()}")
+    else:
+        print(f"{winners[i].title()} wins the {prizes[i].title()}")
+    
+    
