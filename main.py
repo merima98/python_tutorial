@@ -680,3 +680,105 @@
 # print(f"***FINAL ROSETER OF REMAINING PETS AND THEIR DROPOFF TIMES***")
 # for key, value in current_passengers.items():
 #     print(f"Seat number No{key}. Name is {value['name']}. Dropoff time is {value['dropoff_time']}.")
+
+# 20.) #Pizza BUilder - Challenge Steps
+
+# #1. Define a pizza class that sores:
+# #   - size, crust type, and a list of toppings
+# #2. Add a method to add a new topping
+# #3. Add a method to remove the topping if it exists
+# #4. Add a method to print pizza details:
+# #   - size, crust, and all toppings (or No topings yet!)
+# #5. Create a pizza object, customize it, and print the summary 
+
+# class Pizza:
+#     def __init__(self, size, crust, toppings=None):
+#         self.size = size
+#         self.crust = crust
+#         self.toppings = toppings if toppings else []
+        
+#     def add_topping(self, topping):
+#         self.toppings.append(topping)
+    
+#     def remove_topping(self, topping):
+#         if topping in self.toppings:
+#             self.toppings.remove(topping)
+#         else:
+#             print(f'The value of {topping} is not on your pizza!')
+    
+#     def describe_pizza(self):
+#         print("\n 🍕==== Your Pizza ===🍕")
+#         print(f'Size: {self.size.title()}')
+#         print(f'Crust: {self.crust.title()}')
+#         if self.toppings:
+#             print('Toppings:')
+#             for topping in self.toppings:
+#                 print(f'- {topping.title()}')
+#         else:
+#             print('No toppings added yet!')
+
+
+# my_pizza = Pizza('large', 'thin')
+# my_pizza.add_topping('papperoni')
+# my_pizza.add_topping('onions')
+
+# my_pizza.describe_pizza()
+
+# my_pizza.remove_topping('ham')
+# my_pizza.describe_pizza()
+    
+
+#LAMBDA FUNCTIONS:
+
+f = lambda x: x + 5
+
+print(f(2))
+
+strip_spaces = lambda str: ''.join(str.split(' '))
+
+print(strip_spaces('Monty Pythons Flying Circus'))
+
+join_list_no_duplicates = lambda list_a, list_b: list(set(list_a + list_b))
+
+list_a = [1, 2, 3, 4]
+list_b = [3, 4, 5, 6, 7]
+
+print(join_list_no_duplicates(list_a, list_b))
+
+def create_quad_func(a, b, c):
+    # Return function f(x) = ax^2 + bx + c
+    return lambda x: a*x**2 + b*x + c
+
+f = create_quad_func(2, 4, 6)
+
+g = create_quad_func(1, 2, 3)
+
+print(f(2))
+print(g(2))
+
+signups = ['MPF104', 'MPF20', 'MPF2', 'MPF17', 'MPF3', 'MPF45']
+
+print(sorted(signups))
+
+print(sorted(signups, key= lambda id: int(id[3:])))
+
+
+class Player:
+
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+Eric = Player('Eric', 1232)
+John = Player('John', 39032)
+Terry = Player('Terry', 4930)
+
+player_list = [Eric, John, Terry]
+
+
+player_list.sort(key= lambda player: player.score, reverse=True)
+print([player.name for player in player_list])
+
+import random
+
+print(random.random())
